@@ -55,7 +55,7 @@ if(render_part==3) {
   echo("Rendering 4mm shelled gear_tooth_2d()...");
   shell_2d(width=4.0,steps=16,scale_x=1.0,scale_y=1.0)
 //    oshw_logo_2d(scale=1.0);
-    import_dxf(file="ohw-logo.dxf");
+    import(file="ohw-logo.dxf");
 }
 
 module oshw_coin(scale=0.1, coin_h=10.0, coin_wall_th=4.0, extension=0.1) {
@@ -66,13 +66,13 @@ module oshw_coin(scale=0.1, coin_h=10.0, coin_wall_th=4.0, extension=0.1) {
 	  cylinder(r=100.0-coin_wall_th,h=coin_h-coin_wall_th+extension,center=false);
 	translate([0,0,-extension])  linear_extrude(height=coin_wall_th/2+extension,center=false) 
 	  scale([(100.0-coin_wall_th)/100.0,(100.0-coin_wall_th)/100.0]) 
-	    shell_2d(width=coin_wall_th,steps=32) import_dxf(file="ohw-logo.dxf");
+	    shell_2d(width=coin_wall_th,steps=32) import(file="ohw-logo.dxf");
     }
     translate([0,0,coin_wall_th]) color([0,0,1.0]) linear_extrude(height=(coin_h-coin_wall_th)/2,center=false)
-	  scale([(100.0-coin_wall_th)/100.0,(100.0-coin_wall_th)/100.0]) import_dxf(file="ohw-logo.dxf");
+	  scale([(100.0-coin_wall_th)/100.0,(100.0-coin_wall_th)/100.0]) import(file="ohw-logo.dxf");
     translate([0,0,coin_wall_th-extension]) color([0,0,0])
 	linear_extrude(height=coin_h-coin_wall_th+extension,center=false) scale([(100.0-coin_wall_th)/100.0,(100.0-coin_wall_th)/100.0]) 
-	  shell_2d(width=coin_wall_th,steps=32) import_dxf(file="ohw-logo.dxf");
+	  shell_2d(width=coin_wall_th,steps=32) import(file="ohw-logo.dxf");
   }
 }
 
