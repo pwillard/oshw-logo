@@ -54,7 +54,6 @@ if(render_part==3) {
   // Note: Don't perform shell operation on oshw_logo_2d() directly. It's rather inefficient.
   echo("Rendering 4mm shelled gear_tooth_2d()...");
   shell_2d(width=4.0,steps=16,scale_x=1.0,scale_y=1.0)
-//    oshw_logo_2d(scale=1.0);
     import(file="ohw-logo.dxf");
 }
 
